@@ -1,6 +1,7 @@
 import React from "react";
 import { MDXRenderer } from "gatsby-plugin-mdx";
 import { Container, Heading } from "theme-ui";
+import UiDate from "./ui-date";
 
 const Post = ({ id, body, frontmatter }) => {
   const { title, tags, date } = frontmatter;
@@ -8,7 +9,7 @@ const Post = ({ id, body, frontmatter }) => {
   return (
     <Container>
       <Heading variant="h2" as="h1" sx={{ pb: 3 }}>{title}</Heading>
-      <time>{date}</time>
+      <UiDate timestamp={date} />
       {tags.map(tag => <span key={tag}>{tag}</span>)}
       <MDXRenderer>{body}</MDXRenderer>
     </Container>

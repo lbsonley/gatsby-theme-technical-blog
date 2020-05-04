@@ -1,6 +1,7 @@
 /** @jsx jsx */
 import React from "react";
 import { jsx, Styled, Container, Heading } from "theme-ui";
+import UiDate from "./ui-date";
 
 const PostListItem = ({ id, excerpt, frontmatter, fields }) => {
   const { title, date } = frontmatter;
@@ -15,9 +16,9 @@ const PostListItem = ({ id, excerpt, frontmatter, fields }) => {
       }}
     >
       <Styled.a href={slug}>
-        <Heading variant="h3" as="h2">{title}</Heading>
+        <Heading variant="h3" as="h2" pb={3}>{title}</Heading>
       </Styled.a>
-        <span>{date}</span>
+        <UiDate timestamp={date} />
         <Styled.p>{excerpt}</Styled.p>
     </li>
   );
