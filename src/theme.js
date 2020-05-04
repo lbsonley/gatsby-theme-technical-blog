@@ -43,7 +43,7 @@ export const theme = {
     bold: 700,
   },
   lineHeights: {
-    body: 1.625,
+    body: 1.75,
     heading: 1.125,
   },
 
@@ -118,22 +118,29 @@ export const theme = {
       fontSize: 5,
       fontFamily: "heading",
       fontWeight: "heading",
+      lineHeight: "heading",
+      my: 5
     },
     h2: {
       fontSize: 4,
       fontFamily: "heading",
       fontWeight: "heading",
+      lineHeight: "heading",
+      my: 4
     },
     h3: {
       fontSize: 3,
       fontFamily: "heading",
       fontWeight: "heading",
+      lineHeight: "heading",
+      my: 4
     },
     p: {
       fontSize: 1,
       fontFamily: "body",
       fontWeight: "body",
-      lineHeight: "body"
+      lineHeight: "body",
+      my: 5
     },
     a: {
       color: "accent"
