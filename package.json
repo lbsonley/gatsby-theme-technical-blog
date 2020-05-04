@@ -7,10 +7,11 @@
     "build": "gatsby build",
     "clean": "gatsby clean",
     "develop": "gatsby develop",
-    "prettier": "eslint --fix src"
+    "format": "prettier --write src"
   },
   "devDependencies": {
     "gatsby": "^2.21.10",
+    "prettier": "^2.0.5",
     "react": "^16.13.1",
     "react-dom": "^16.13.1"
   },

@@ -1,5 +1,4 @@
 /** @jsx jsx */
-import React from "react";
 import { jsx } from "theme-ui";
 
 const Tag = ({ name }) => {
@@ -13,7 +12,7 @@ const Tag = ({ name }) => {
         py: 3,
         px: 5,
         mr: 3,
-        my: 3
+        my: 3,
       }}
     >
       {name}
@@ -24,11 +23,13 @@ const Tag = ({ name }) => {
 const Tags = ({ tags }) => {
   return (
     <ul sx={{ listStyle: "none", mx: 0, my: 5, p: 0 }}>
-      {tags.map(tag => (
-        <Tag key={tag} name={tag}>{tag}</Tag>
+      {tags.map((tag) => (
+        <Tag key={tag} name={tag}>
+          {tag}
+        </Tag>
       ))}
     </ul>
-  )
-}
+  );
+};
 
 export default Tags;
