@@ -1,7 +1,7 @@
 const fs = require("fs");
 
 /**
- * Make sure posts directory exists
+ * Make sure /posts directory exists
  */
 exports.onPreBootstrap = ({ reporter }) => {
   const postsPath = "posts";
@@ -13,7 +13,7 @@ exports.onPreBootstrap = ({ reporter }) => {
 };
 
 /**
- * Create slug for Posts
+ * Create slug for Posts based on title
  */
 exports.onCreateNode = ({ node, actions, getNode }) => {
   const basePath = "/blog";
@@ -53,6 +53,15 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
 const path = require("path")
 
 exports.createPages = async ({ graphql, actions, reporter }) => {
+  const basePath = "/blog";
+
+  /**
+   * Create Post Listing Page
+   */
+  actions.createPage({
+    path: basePath,
+    component: path.resolve(`./src/templates/post-list.js`)
+  })
 
   const result = await graphql(`
     query {
@@ -78,7 +87,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
 
   const posts = result.data.allMdx.edges;
 
-  // you'll call `createPage` for each result
+  // Create a page for each post
   posts.forEach(({ node }, index) => {
     actions.createPage({
       path: node.fields.slug,

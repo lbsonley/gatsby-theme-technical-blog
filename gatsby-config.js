@@ -7,21 +7,13 @@ module.exports = {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `posts`,
-        path: `${__dirname}/src/posts/`,
+        path: `${__dirname}/posts/`,
       },
     },
 
     /**
      * Add support for mdx
      */
-    {
-      resolve: "gatsby-plugin-mdx",
-      options: {
-        defaultLayouts: {
-          // key maps to `name` in `gatsby-source-filesystem`
-          posts: require.resolve("./src/components/post-layout")
-        }
-      }
-    }
+    "gatsby-plugin-mdx"
   ]
 };

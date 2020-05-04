@@ -1,6 +1,6 @@
 import React from "react";
 
-const PostLayout = ({ children }) => {
+const Layout = ({ children }) => {
   return (
     <>
       <header>
@@ -16,4 +16,4 @@ const PostLayout = ({ children }) => {
   )
 };
 
-export default PostLayout;
+export default Layout;

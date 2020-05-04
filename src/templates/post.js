@@ -1,17 +1,13 @@
 import React from "react";
 import { graphql } from "gatsby";
-import { MDXRenderer } from "gatsby-plugin-mdx";
+import Layout from "../components/layout";
+import Post from "../components/post";
 
-const Post = ({ data: { mdx } }) => {
-  return (
-    <>
-      <h1>{mdx.frontmatter.title}</h1>
-      <time>{mdx.frontmatter.data}</time>
-      {mdx.frontmatter.tags.map(tag => <span>{tag}</span>)}
-      <MDXRenderer>{mdx.body}</MDXRenderer>
-    </>
-  );
-};
+const PostTemplate = ({ data: { mdx } }) => (
+  <Layout>
+    <Post {...mdx} />
+  </Layout>
+);
 
 export const query = graphql`
   query BlogPostQuery($id: String!) {
@@ -27,4 +23,4 @@ export const query = graphql`
   }
 `;
 
-export default Post;
+export default PostTemplate;
