@@ -1,0 +1,22 @@
+{
+  "name": "gatsby-theme-tech-blog-mdx",
+  "version": "0.0.1",
+  "license": "MIT",
+  "main": "index.js",
+  "scripts": {
+    "build": "gatsby build",
+    "clean": "gatsby clean",
+    "develop": "gatsby develop",
+    "prettier": "eslint --fix src"
+  },
+  "devDependencies": {
+    "gatsby": "^2.21.10",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1"
+  },
+  "peerDependencies": {
+    "gatsby": "^2.21.10",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1"
+  }
+}
