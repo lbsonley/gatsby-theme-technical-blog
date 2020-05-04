@@ -10,16 +10,18 @@ module.exports = {
         path: `${__dirname}/src/posts/`,
       },
     },
-    {
-      resolve: "gatsby-plugin-page-creator",
-      options: {
-        path: `${__dirname}/src/posts`,
-      },
-    },
 
     /**
      * Add support for mdx
      */
-    "gatsby-plugin-mdx"
+    {
+      resolve: "gatsby-plugin-mdx",
+      options: {
+        defaultLayouts: {
+          // key maps to `name` in `gatsby-source-filesystem`
+          posts: require.resolve("./src/components/post-layout")
+        }
+      }
+    }
   ]
 };
