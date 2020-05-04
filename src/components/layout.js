@@ -1,18 +1,34 @@
+/** @jsx jsx */
 import React from "react";
+import { jsx, Flex, Heading, Text } from "theme-ui";
 
 const Layout = ({ children }) => {
   return (
-    <>
-      <header>
-        <h1>Gatsby Theme Technical Blog MDX</h1>
+    <Flex sx={{ flexDirection: "column", minHeight: "minHeight" }}>
+      <header
+        sx={{
+          flex: "0 1 15%",
+          p: 6,
+          mb: 6,
+          variant: "layout.header"
+        }}
+      >
+        <Heading variant="h3" as="h1">Technical Blog</Heading>
       </header>
-      <main>
+      <main sx={{ flex: "1 0 70%" }}>
         {children}
       </main>
-      <footer>
-        <p>footer content</p>
+      <footer
+        sx={{
+          flex: "0 1 15%",
+          p: 6,
+          mt: 6,
+          variant: "layout.footer"
+        }}
+      >
+        <Text as="p">footer content</Text>
       </footer>
-    </>
+    </Flex>
   )
 };
 

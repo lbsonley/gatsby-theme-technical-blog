@@ -1,6 +1,11 @@
 module.exports = {
   plugins: [
     /**
+     * Add support for theme-ui
+     */
+    "gatsby-plugin-theme-ui",
+
+    /**
      * configure source-filesystem to look in posts
      */
     {

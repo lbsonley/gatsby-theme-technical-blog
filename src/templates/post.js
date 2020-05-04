@@ -1,5 +1,6 @@
 import React from "react";
 import { graphql } from "gatsby";
+import { Container } from "theme-ui";
 import Layout from "../components/layout";
 import Post from "../components/post";
 
