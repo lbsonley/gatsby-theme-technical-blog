@@ -2,9 +2,10 @@
 import React from "react";
 import { jsx, Styled, Container, Heading } from "theme-ui";
 import UiDate from "./ui-date";
+import Tags from "./tags";
 
 const PostListItem = ({ id, excerpt, frontmatter, fields }) => {
-  const { title, date } = frontmatter;
+  const { title, date, tags } = frontmatter;
   const { slug } = fields;
   return (
     <li
@@ -19,6 +20,7 @@ const PostListItem = ({ id, excerpt, frontmatter, fields }) => {
         <Heading variant="h3" as="h2" pb={3}>{title}</Heading>
       </Styled.a>
         <UiDate timestamp={date} />
+        <Tags tags={tags} />
         <Styled.p>{excerpt}</Styled.p>
     </li>
   );

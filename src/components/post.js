@@ -1,17 +1,20 @@
 import React from "react";
 import { MDXRenderer } from "gatsby-plugin-mdx";
-import { Container, Heading } from "theme-ui";
+import { Box, Container, Styled } from "theme-ui";
 import UiDate from "./ui-date";
+import Tags from "./tags";
 
 const Post = ({ id, body, frontmatter }) => {
   const { title, tags, date } = frontmatter;
 
   return (
     <Container>
-      <Heading variant="h2" as="h1" sx={{ pb: 3 }}>{title}</Heading>
+      <Styled.h2>{title}</Styled.h2>
       <UiDate timestamp={date} />
-      {tags.map(tag => <span key={tag}>{tag}</span>)}
-      <MDXRenderer>{body}</MDXRenderer>
+      <Tags tags={tags} />
+      <Box mt={5}>
+        <MDXRenderer>{body}</MDXRenderer>
+      </Box>
     </Container>
   );
 };
