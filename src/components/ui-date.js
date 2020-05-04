@@ -7,7 +7,7 @@ const UiDate = ({ timestamp }) => {
     year: "numeric",
   });
 
-  return <time datetime={timestamp}>{dateString}</time>;
+  return <time dateTime={timestamp}>{dateString}</time>;
 };
 
 export default UiDate;
