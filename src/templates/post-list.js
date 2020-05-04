@@ -1,15 +1,10 @@
 import React from "react";
 import { graphql } from "gatsby";
-import Layout from "../components/layout";
 import PostList from "../components/post-list";
 
-const PostListTemplate = ({ data: { allMdx } }) => {
-  return (
-    <Layout>
-      <PostList posts={allMdx.edges} />
-    </Layout>
-  );
-};
+const PostListTemplate = ({ data: { allMdx } }) => (
+  <PostList posts={allMdx.edges} />
+);
 
 export const query = graphql`
   query BlogPostsQuery {

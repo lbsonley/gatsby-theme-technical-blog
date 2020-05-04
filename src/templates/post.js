@@ -1,14 +1,8 @@
 import React from "react";
 import { graphql } from "gatsby";
-import { Container } from "theme-ui";
-import Layout from "../components/layout";
 import Post from "../components/post";
 
-const PostTemplate = ({ data: { mdx } }) => (
-  <Layout>
-    <Post {...mdx} />
-  </Layout>
-);
+const PostTemplate = ({ data: { mdx } }) => <Post {...mdx} />;
 
 export const query = graphql`
   query BlogPostQuery($id: String!) {

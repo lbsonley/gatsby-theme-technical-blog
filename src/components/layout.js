@@ -1,6 +1,5 @@
 /** @jsx jsx */
-import React from "react";
-import { jsx, Flex, Heading, Text } from "theme-ui";
+import { jsx, Flex, Styled } from "theme-ui";
 
 const Layout = ({ children }) => {
   return (
@@ -8,28 +7,22 @@ const Layout = ({ children }) => {
       <header
         sx={{
           flex: "0 1 15%",
-          p: 6,
-          mb: 6,
-          variant: "layout.header"
+          variant: "layout.header",
         }}
       >
-        <Heading variant="h3" as="h1">Technical Blog</Heading>
+        <Styled.h1 sx={{ fontSize: 3, m: 0 }}>Technical Blog</Styled.h1>
       </header>
-      <main sx={{ flex: "1 0 70%" }}>
-        {children}
-      </main>
+      <main sx={{ flex: "1 0 70%" }}>{children}</main>
       <footer
         sx={{
           flex: "0 1 15%",
-          p: 6,
-          mt: 6,
-          variant: "layout.footer"
+          variant: "layout.footer",
         }}
       >
-        <Text as="p">footer content</Text>
+        <Styled.p sx={{ m: 0 }}>footer content</Styled.p>
       </footer>
     </Flex>
-  )
+  );
 };
 
 export default Layout;
