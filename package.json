@@ -15,7 +15,12 @@
     "react-dom": "^16.13.1"
   },
   "peerDependencies": {
+    "@mdx-js/mdx": "^1.6.1",
+    "@mdx-js/react": "^1.6.1",
     "gatsby": "^2.21.10",
+    "gatsby-plugin-mdx": "^1.2.5",
+    "gatsby-plugin-page-creator": "^2.3.0",
+    "gatsby-source-filesystem": "^2.3.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1"
   }
