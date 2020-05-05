@@ -1,7 +1,8 @@
 /** @jsx jsx */
 import { jsx } from "theme-ui";
 import Highlight, { defaultProps } from "prism-react-renderer";
-import theme from "prism-react-renderer/themes/oceanicNext";
+import themeLight from "prism-react-renderer/themes/oceanicNext";
+import themeDark from "prism-react-renderer/themes/github";
 
 
 const CodeBlock = ({ children, className }) => {
@@ -11,7 +12,7 @@ const CodeBlock = ({ children, className }) => {
      {...defaultProps}
      code={children}
      language={language}
-     theme={theme}
+     theme={themeLight}
     >
       {({ className, style, tokens, getLineProps, getTokenProps }) => (
         <pre className={className} style={style} sx={{ p: 5 }}>
