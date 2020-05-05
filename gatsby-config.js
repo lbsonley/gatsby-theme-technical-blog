@@ -19,6 +19,21 @@ module.exports = {
     /**
      * Add support for mdx
      */
-    "gatsby-plugin-mdx"
+    "gatsby-plugin-sharp",
+    "gatsby-remark-images",
+    
+    {
+      resolve: "gatsby-plugin-mdx",
+      options: {
+        gatsbyRemarkPlugins: [
+          {
+            resolve: "gatsby-remark-images",
+            options: {
+              maxWidth: 600
+            }
+          }
+        ]
+      }
+    }
   ]
 };
