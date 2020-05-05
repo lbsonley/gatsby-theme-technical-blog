@@ -21,12 +21,13 @@ module.exports = {
      */
     "gatsby-plugin-sharp",
     "gatsby-remark-images",
-    
     {
       resolve: "gatsby-plugin-mdx",
       options: {
         gatsbyRemarkPlugins: [
           "gatsby-remark-katex",
+          "gatsby-remark-copy-linked-files",
+          "gatsby-remark-autolink-headers",
           {
             resolve: "gatsby-remark-images",
             options: {
