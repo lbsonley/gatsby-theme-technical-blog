@@ -3,6 +3,8 @@ import { jsx, Flex, Styled } from "theme-ui";
 import { MDXProvider } from "@mdx-js/react";
 import CodeBlock from "./code-block";
 
+import "katex/dist/katex.min.css"
+
 const components = {
   code: CodeBlock,
 };

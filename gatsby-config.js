@@ -26,6 +26,7 @@ module.exports = {
       resolve: "gatsby-plugin-mdx",
       options: {
         gatsbyRemarkPlugins: [
+          "gatsby-remark-katex",
           {
             resolve: "gatsby-remark-images",
             options: {
