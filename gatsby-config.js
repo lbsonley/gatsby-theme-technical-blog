@@ -1,4 +1,4 @@
-module.exports = {
+module.exports = ({ contentPath = "posts", basePath = "/blog" }) => ({
   plugins: [
     /**
      * Add support for theme-ui
@@ -6,13 +6,12 @@ module.exports = {
     "gatsby-plugin-theme-ui",
 
     /**
-     * configure source-filesystem to look in posts
+     * configure source-filesystem to look in `contentPath`
      */
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        name: `posts`,
-        path: `${__dirname}/posts/`,
+        path: contentPath,
       },
     },
 
@@ -38,4 +37,4 @@ module.exports = {
       }
     }
   ]
-};
+});

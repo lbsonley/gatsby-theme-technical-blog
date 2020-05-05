@@ -1,22 +1,32 @@
 const fs = require("fs");
 
 /**
- * Make sure /posts directory exists
+ * Make sure /posts directory exists and has one file with frontmatter
  */
-exports.onPreBootstrap = ({ reporter }) => {
-  const postsPath = "posts";
+exports.onPreBootstrap = ({ reporter }, options) => {
+  const contentPath = options.contentPath || "posts";
   
-  if (!fs.existsSync(postsPath)) {
-    reporter.info(`creating the ${postsPath} directory`);
-    fs.mkdirSync(postsPath);
+  if (!fs.existsSync(contentPath)) {
+    reporter.info(`creating the ${contentPath} directory`);
+    fs.mkdirSync(contentPath);
+    reporter.info(`creating your first content in ${contentPath}/post.mdx`);
+    fs.writeFileSync(`${contentPath}/post.mdx`, 
+`---
+  title: Post 1
+  date: 2020-05-05
+  tags: ['first post']
+---
+
+First post.`
+    );
   }
 };
 
 /**
  * Create slug for Posts based on title
  */
-exports.onCreateNode = ({ node, actions, getNode }) => {
-  const basePath = "/blog";
+exports.onCreateNode = ({ node, actions, getNode }, options) => {
+  const basePath = options.basePath || "/blog";
 
   /**
    * @description - slugify terms a string into a hyphenated slug
@@ -50,17 +60,15 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
 /**
  * Create Pages for Posts
  */
-const path = require("path")
-
-exports.createPages = async ({ graphql, actions, reporter }) => {
-  const basePath = "/blog";
+exports.createPages = async ({ graphql, actions, reporter }, options) => {
+  const basePath = options.basePath || "/blog";
 
   /**
    * Create Post Listing Page
    */
   actions.createPage({
     path: basePath,
-    component: path.resolve(`./src/templates/post-list.js`)
+    component: require.resolve(`./src/templates/post-list.js`)
   })
 
   const result = await graphql(`
@@ -83,6 +91,8 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
 
   if (result.errors) {
     reporter.panicOnBuild('🚨  ERROR: Loading "createPages" query');
+    reporter.error(JSON.stringify(result.errors, null, 2));
+    return;
   }
 
   const posts = result.data.allMdx.edges;
@@ -92,7 +102,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     actions.createPage({
       path: node.fields.slug,
       // This component will wrap our MDX content
-      component: path.resolve(`./src/templates/post.js`),
+      component: require.resolve(`./src/templates/post.js`),
       // You can use the values in this context in
       // our page layout component
       context: { id: node.id }
