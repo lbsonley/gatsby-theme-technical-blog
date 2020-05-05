@@ -1,8 +1,22 @@
 {
   "name": "gatsby-theme-tech-blog-mdx",
-  "version": "0.0.1",
-  "license": "MIT",
+  "version": "0.1.0",
+  "description": "Technical Blog Template for Gatsby.js",
   "main": "index.js",
+  "license": "MIT",
+  "author": {
+    "name": "Ben Sonley",
+    "email": "lbsonley@gmail.com",
+    "url": "http://bensonley.com"
+  },
+  "keywords": [
+    "gatsby",
+    "theme-ui",
+    "mdx-js",
+    "prismjs",
+    "KaTeX",
+    "blog theme"
+  ],
   "scripts": {
     "build": "gatsby build",
     "clean": "gatsby clean",
