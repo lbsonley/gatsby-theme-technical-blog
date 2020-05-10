@@ -73,17 +73,23 @@ exports.createPages = async ({ graphql, actions, reporter }, options) => {
 
   const result = await graphql(`
     query {
-      allMdx {
+      allMdx(
+        filter: { frontmatter: { published: { eq: true } } }
+        limit: 1000
+      ) {
         edges {
           node {
             id
             fields {
               slug
             }
-            frontmatter {
-              tags
-            }
           }
+        }
+        tags: group(field: frontmatter___tags) {
+          fieldValue
+        }
+        categories: group(field: frontmatter___category) {
+          fieldValue
         }
       }
     }
@@ -96,16 +102,34 @@ exports.createPages = async ({ graphql, actions, reporter }, options) => {
   }
 
   const posts = result.data.allMdx.edges;
-
   // Create a page for each post
   posts.forEach(({ node }, index) => {
     actions.createPage({
       path: node.fields.slug,
-      // This component will wrap our MDX content
       component: require.resolve(`./src/templates/post.js`),
-      // You can use the values in this context in
-      // our page layout component
       context: { id: node.id }
     })
   });
+
+  const tags = result.data.allMdx.tags;
+  // Create page for each tag
+  tags.forEach(({ fieldValue }, i) => {
+    actions.createPage({
+      path: `/tags/${fieldValue}`,
+      component: require.resolve('./src/templates/posts-by-tag.js'),
+      context: { tag: fieldValue }
+    })
+  });
+
+  const categories = result.data.allMdx.categories;
+  // Create page for each category
+  categories.forEach(({ fieldValue }, i) => {
+    actions.createPage({
+      path: `/category/${fieldValue}`,
+      component: require.resolve('./src/templates/posts-by-category.js'),
+      context: { category: fieldValue }
+    })
+  });
+
+
 };

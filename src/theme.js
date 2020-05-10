@@ -107,6 +107,25 @@ export const theme = {
   },
 
   /**
+   * theme-ui <Link> component
+   */
+  links: {
+    tag: {
+      textDecoration: "none",
+      borderRadius: "pill",
+      bg: "primary",
+      color: "background",
+      py: 3,
+      px: 5,
+      mr: 3,
+      my: 3,
+      "&:hover": {
+        bg: "highlight"
+      }
+    }
+  },
+
+  /**
    * Elements rendered in MDX or `Styled`
    */
   styles: {
@@ -146,6 +165,9 @@ export const theme = {
     },
     a: {
       color: "accent",
+      "&:hover": {
+        color: "highlight"
+      }
     },
   },
 };

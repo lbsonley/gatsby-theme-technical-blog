@@ -3,10 +3,14 @@ import { jsx, Styled, Container, Heading } from "theme-ui";
 import Layout from "./layout";
 import UiDate from "./ui-date";
 import Tags from "./tags";
+import Category from "./category";
 
 const PostListItem = ({ id, excerpt, frontmatter, fields }) => {
-  const { title, date, tags } = frontmatter;
+  const { title, date, tags, category } = frontmatter;
   const { slug } = fields;
+
+  
+
   return (
     <li
       sx={{
@@ -22,8 +26,9 @@ const PostListItem = ({ id, excerpt, frontmatter, fields }) => {
         </Heading>
       </Styled.a>
       <UiDate timestamp={date} />
+      <Category name={category} />
+      <Styled.p sx={{ mt: 3 }}>{excerpt}</Styled.p>
       <Tags tags={tags} />
-      <Styled.p>{excerpt}</Styled.p>
     </li>
   );
 };

@@ -1,21 +1,17 @@
 /** @jsx jsx */
-import { jsx } from "theme-ui";
+import { Link } from "gatsby";
+import { jsx, Link as ThemeLink } from "theme-ui";
 
 const Tag = ({ name }) => {
   return (
-    <li
-      sx={{
-        display: "inline-block",
-        borderRadius: "pill",
-        bg: "primary",
-        color: "background",
-        py: 3,
-        px: 5,
-        mr: 3,
-        my: 3,
-      }}
-    >
-      {name}
+    <li sx={{ display: "inline-block" }}>
+      <ThemeLink
+        variant="tag"
+        as={Link}
+        to={`/tags/${name}`}
+      >
+        {name}
+      </ThemeLink>
     </li>
   );
 };
