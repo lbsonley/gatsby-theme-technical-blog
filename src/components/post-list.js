@@ -1,6 +1,5 @@
 /** @jsx jsx */
-import { jsx, Styled, Container, Heading } from "theme-ui";
-import Layout from "./layout";
+import { jsx, Styled, Heading } from "theme-ui";
 import UiDate from "./ui-date";
 import Tags from "./tags";
 import Category from "./category";
@@ -8,8 +7,6 @@ import Category from "./category";
 const PostListItem = ({ id, excerpt, frontmatter, fields }) => {
   const { title, date, tags, category } = frontmatter;
   const { slug } = fields;
-
-  
 
   return (
     <li
@@ -35,15 +32,11 @@ const PostListItem = ({ id, excerpt, frontmatter, fields }) => {
 
 const PostList = ({ posts }) => {
   return (
-    <Layout>
-      <Container>
-        <ul sx={{ listStyle: "none", m: 0, p: 0 }}>
-          {posts.map((post) => (
-            <PostListItem key={post.node.id} {...post.node} />
-          ))}
-        </ul>
-      </Container>
-    </Layout>
+    <ul sx={{ listStyle: "none", m: 0, p: 0 }}>
+      {posts.map((post) => (
+        <PostListItem key={post.node.id} {...post.node} />
+      ))}
+    </ul>
   );
 };
 

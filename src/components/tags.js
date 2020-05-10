@@ -5,11 +5,7 @@ import { jsx, Link as ThemeLink } from "theme-ui";
 const Tag = ({ name }) => {
   return (
     <li sx={{ display: "inline-block" }}>
-      <ThemeLink
-        variant="tag"
-        as={Link}
-        to={`/tags/${name}`}
-      >
+      <ThemeLink variant="tag" as={Link} to={`/tags/${name}`}>
         {name}
       </ThemeLink>
     </li>

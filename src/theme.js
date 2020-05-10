@@ -120,9 +120,9 @@ export const theme = {
       mr: 3,
       my: 3,
       "&:hover": {
-        bg: "highlight"
-      }
-    }
+        bg: "highlight",
+      },
+    },
   },
 
   /**
@@ -166,8 +166,8 @@ export const theme = {
     a: {
       color: "accent",
       "&:hover": {
-        color: "highlight"
-      }
+        color: "highlight",
+      },
     },
   },
 };
