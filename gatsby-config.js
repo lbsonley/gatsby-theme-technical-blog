@@ -1,8 +1,9 @@
-
-const contentPath = "posts";
-const basePath = "/blog";
-
-module.exports = {
+module.exports = ({
+  contentPath = "posts",
+  basePath = "/blog",
+  categories = true,
+  tags = true
+}) => ({
   plugins: [
     /**
      * Add support for theme-ui
@@ -41,4 +42,4 @@ module.exports = {
       }
     }
   ]
-};
+});

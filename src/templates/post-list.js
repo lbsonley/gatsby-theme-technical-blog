@@ -1,9 +1,12 @@
 import React from "react";
 import { graphql } from "gatsby";
 import PostList from "../components/post-list";
+import Grouping from "../contexts/grouping.js";
 
-const PostListTemplate = ({ data: { allMdx } }) => (
-  <PostList posts={allMdx.edges} />
+const PostListTemplate = ({ data: { allMdx }, pageContext }) => (
+  <Grouping.Provider value={pageContext} >
+    <PostList posts={allMdx.edges} />
+  </Grouping.Provider>
 );
 
 export const query = graphql`

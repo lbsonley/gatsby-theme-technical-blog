@@ -1,6 +1,6 @@
 {
   "name": "gatsby-theme-technical-blog",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Technical Blog Template for Gatsby.js",
   "main": "index.js",
   "license": "MIT",

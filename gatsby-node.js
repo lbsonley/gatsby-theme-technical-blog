@@ -14,7 +14,9 @@ exports.onPreBootstrap = ({ reporter }, options) => {
 `---
   title: Post 1
   date: 2020-05-05
+  category: hydrodynamics
   tags: ['first post']
+  published: true
 ---
 
 First post.`
@@ -62,16 +64,26 @@ exports.onCreateNode = ({ node, actions, getNode }, options) => {
  */
 exports.createPages = async ({ graphql, actions, reporter }, options) => {
   const basePath = options.basePath || "/blog";
+  const useCategories = options.categories !== undefined ?
+    options.categories :
+    true;
+  const useTags = options.tags !== undefined ?
+    options.tags :
+    true;
 
   /**
    * Create Post Listing Page
    */
   actions.createPage({
     path: basePath,
-    component: require.resolve(`./src/templates/post-list.js`)
+    component: require.resolve(`./src/templates/post-list.js`),
+    context: {
+      categories: useCategories,
+      tags: useTags
+    }
   })
 
-  const result = await graphql(`
+  const allContent = await graphql(`
     query {
       allMdx(
         filter: { frontmatter: { published: { eq: true } } }
@@ -85,51 +97,95 @@ exports.createPages = async ({ graphql, actions, reporter }, options) => {
             }
           }
         }
-        tags: group(field: frontmatter___tags) {
-          fieldValue
-        }
-        categories: group(field: frontmatter___category) {
-          fieldValue
-        }
       }
     }
-  `)
+  `);
 
-  if (result.errors) {
-    reporter.panicOnBuild('🚨  ERROR: Loading "createPages" query');
-    reporter.error(JSON.stringify(result.errors, null, 2));
+  if (allContent.errors) {
+    reporter.panicOnBuild('🚨  ERROR: Loading "allContent" query');
+    reporter.error(JSON.stringify(allContent.errors, null, 2));
     return;
   }
 
-  const posts = result.data.allMdx.edges;
+  const posts = allContent.data.allMdx.edges;
   // Create a page for each post
   posts.forEach(({ node }, index) => {
     actions.createPage({
       path: node.fields.slug,
       component: require.resolve(`./src/templates/post.js`),
-      context: { id: node.id }
+      context: {
+        id: node.id,
+        categories: useCategories,
+        tags: useTags
+      }
     })
   });
 
-  const tags = result.data.allMdx.tags;
-  // Create page for each tag
-  tags.forEach(({ fieldValue }, i) => {
-    actions.createPage({
-      path: `/tags/${fieldValue}`,
-      component: require.resolve('./src/templates/posts-by-tag.js'),
-      context: { tag: fieldValue }
-    })
-  });
+  /**
+   * Create listing page for each category
+   */
+  if (useCategories) {
+    const contentByCategories = await graphql(`
+      query {
+        allMdx(
+          filter: { frontmatter: { published: { eq: true } } }
+          limit: 1000
+        ) {
+          categories: group(field: frontmatter___category) {
+            fieldValue
+          }
+        }
+      }
+    `);
 
-  const categories = result.data.allMdx.categories;
-  // Create page for each category
-  categories.forEach(({ fieldValue }, i) => {
-    actions.createPage({
-      path: `/category/${fieldValue}`,
-      component: require.resolve('./src/templates/posts-by-category.js'),
-      context: { category: fieldValue }
-    })
-  });
+    if (contentByCategories.errors) {
+      reporter.panicOnBuild('🚨  ERROR: Loading "contentByCategories" query');
+      reporter.error(JSON.stringify(contentByCategories.errors, null, 2));
+      return;
+    }
 
+    const categories = contentByCategories.data.allMdx.categories;
+    // Create page for each category
+    categories.forEach(({ fieldValue }, i) => {
+      actions.createPage({
+        path: `/category/${fieldValue}`,
+        component: require.resolve('./src/templates/posts-by-category.js'),
+        context: { category: fieldValue }
+      })
+    });
+  }
 
+  /**
+   * Create listing page for each tag
+   */
+  if (useTags) {
+    const contentByTags = await graphql(`
+      query {
+        allMdx(
+          filter: { frontmatter: { published: { eq: true } } }
+          limit: 1000
+        ) {
+          tags: group(field: frontmatter___tags) {
+            fieldValue
+          }
+        }
+      }
+    `);
+
+    if (contentByTags.errors) {
+      reporter.panicOnBuild('🚨  ERROR: Loading "contentByTags" query');
+      reporter.error(JSON.stringify(contentByTags.errors, null, 2));
+      return;
+    }
+
+    const tags = contentByTags.data.allMdx.tags;
+    // Create page for each tag
+    tags.forEach(({ fieldValue }, i) => {
+      actions.createPage({
+        path: `/tags/${fieldValue}`,
+        component: require.resolve('./src/templates/posts-by-tag.js'),
+        context: { tag: fieldValue }
+      })
+    });
+  }
 };
