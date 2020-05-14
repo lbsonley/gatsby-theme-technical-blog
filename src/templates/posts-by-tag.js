@@ -1,13 +1,12 @@
-/** @jsx jsx */
 import React from "react";
 import { graphql } from "gatsby";
-import { jsx, Styled } from "theme-ui";
 import PostList from "../components/post-list";
+import TagTitle from "../components/tag-title";
 
 const PostsByTag = ({ data: { allMdx }, pageContext: { tag } }) => {
   return (
     <>
-      <Styled.h2 sx={{ fontSize: 3 }}>Tag: {tag}</Styled.h2>
+      <TagTitle tag={tag}/>
       <PostList posts={allMdx.edges} />
     </>
   );
