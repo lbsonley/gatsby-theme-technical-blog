@@ -69,9 +69,9 @@ export const theme = {
    * Shadows
    */
   shadows: {
-    default: "0 5px 10px rgba(0, 0, 0, .15)",
-    sm: "0 1.25px 2.5px rgba(0, 0, 0, .075)",
-    md: "0 10px 30px rgba(0, 0, 0, .175)",
+    small: "0 1.25px 2.5px rgba(0, 0, 0, .5)",
+    medium: "0 5px 10px rgba(0, 0, 0, .5)",
+    large: "0 8px 20px rgba(0, 0, 0, .5)",
   },
 
   /**
@@ -93,9 +93,10 @@ export const theme = {
   layout: {
     header: {
       padding: 6,
-      marginBottom: 4,
+      marginBottom: 5,
       color: "background",
       bg: "text",
+      boxShadow: "medium",
     },
     footer: {
       padding: 6,
