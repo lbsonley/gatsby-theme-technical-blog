@@ -1,12 +1,12 @@
 import React from "react";
 import { graphql } from "gatsby";
 import PostList from "../components/post-list";
-import TagTitle from "../components/tag-title";
+import SubTitle from "../components/subtitle";
 
 const PostsByTag = ({ data: { allMdx }, pageContext: { tag } }) => {
   return (
     <>
-      <TagTitle tag={tag}/>
+      <SubTitle tag={tag}/>
       <PostList posts={allMdx.edges} />
     </>
   );

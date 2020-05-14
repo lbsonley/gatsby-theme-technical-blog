@@ -29,7 +29,8 @@ const Tags = ({ tags, title }) => {
         alignItems: "center",
         listStyle: "none",
         m: 0,
-        p: 0
+        p: 0,
+        ml: () => `${title ? 2 : 0}`
       }}
     >
       <FaTags size={24} sx={{ mr: 4 }} />

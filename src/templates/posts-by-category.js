@@ -3,11 +3,12 @@ import React from "react";
 import { graphql } from "gatsby";
 import { jsx, Styled } from "theme-ui";
 import PostList from "../components/post-list";
+import SubTitle from "../components/subtitle";
 
 const PostsByCategory = ({ data: { allMdx }, pageContext: { category } }) => {
   return (
     <>
-      <Styled.h2 sx={{ fontSize: 3 }}>Category: {category}</Styled.h2>
+      <SubTitle category={category} />
       <PostList posts={allMdx.edges} />
     </>
   );

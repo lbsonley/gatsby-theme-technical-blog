@@ -26,7 +26,7 @@ const PostListItem = ({ id, excerpt, frontmatter, fields }) => {
             </Heading>
           </Styled.a>
           <UiDate timestamp={date} />
-          {grouping.categories ? <Category name={category} /> : null}
+          {grouping.categories ? <Category category={category} /> : null}
           <Styled.p sx={{ mt: 3 }}>{excerpt}</Styled.p>
           {grouping.tags ? <Tags tags={tags} /> : null}
         </li>
