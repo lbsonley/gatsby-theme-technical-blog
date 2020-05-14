@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import { jsx, useColorMode } from "theme-ui";
 import {
-  WiMoonAltWaningCrescent4 as DarkModeIcon,
+  WiMoonAltWaningGibbous3 as DarkModeIcon,
   WiMoonAltWaningGibbous4 as LightModeIcon,
 } from "react-icons/wi";
 

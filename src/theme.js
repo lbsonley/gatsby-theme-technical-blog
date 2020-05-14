@@ -8,21 +8,23 @@ export const theme = {
    * Colors
    */
   colors: {
-    text: "#546E7A",
+    light: "#FAFAFA",
+    text: "#263238",
     background: "#FAFAFA",
-    primary: "#80CBC4",
-    secondary: "#7C4DFF",
-    accent: "#39ADB5",
-    highlight: "#F6A434",
-    muted: "#94A7B0",
+    primary: "#1E272C",
+    secondary: "#546E7A",
+    accent: "#73B6B0",
+    highlight: "#80CBC4",
+    muted: "#546E7A",
     modes: {
       dark: {
+        light: "#FAFAFA",
         text: "#FAFAFA",
         background: "#263238",
-        primary: "#546E7A",
-        secondary: "#32424A",
-        accent: "#009688",
-        highlight: " #C792EA",
+        primary: "#1E272C",
+        secondary: "#546E7A",
+        accent: "#73B6B0",
+        highlight: "#80CBC4",
         muted: "#546E7A",
       },
     },
@@ -95,7 +97,7 @@ export const theme = {
       padding: 6,
       marginBottom: 7,
       color: "background",
-      bg: "text",
+      bg: "primary",
       boxShadow: "medium",
     },
     footer: {
@@ -115,7 +117,7 @@ export const theme = {
     tag: {
       textDecoration: "none",
       borderRadius: "pill",
-      bg: "primary",
+      bg: "accent",
       color: "background",
       transition: "background-color 0.2s ease",
       py: 2,
@@ -127,7 +129,7 @@ export const theme = {
       },
     },
     title: {
-      color: "background",
+      color: "light",
       textDecoration: "none",
     },
   },
