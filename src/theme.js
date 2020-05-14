@@ -93,7 +93,7 @@ export const theme = {
   layout: {
     header: {
       padding: 6,
-      marginBottom: 5,
+      marginBottom: 7,
       color: "background",
       bg: "text",
       boxShadow: "medium",
