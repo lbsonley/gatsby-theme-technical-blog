@@ -1,4 +1,4 @@
-import React, { createContext } from "react";
+import { createContext } from "react";
 
 const Grouping = createContext({ categories: true, tags: true });
 
