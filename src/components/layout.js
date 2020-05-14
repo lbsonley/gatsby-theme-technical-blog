@@ -1,5 +1,6 @@
 /** @jsx jsx */
-import { jsx, Flex, Styled, Container } from "theme-ui";
+import { Link } from "gatsby";
+import { jsx, Flex, Styled, Container, Link as ThemeLink } from "theme-ui";
 import { MDXProvider } from "@mdx-js/react";
 import CodeBlock from "./code-block";
 
@@ -19,7 +20,11 @@ const Layout = ({ children }) => {
             variant: "layout.header",
           }}
         >
-          <Styled.h1 sx={{ fontSize: 3, m: 0 }}>Technical Blog</Styled.h1>
+          <Styled.h1 sx={{ fontSize: 3, m: 0 }}>
+            <ThemeLink as={Link} variant="title" to="/blog">
+              Technical Blog
+            </ThemeLink>
+          </Styled.h1>
         </header>
         <main sx={{ flex: "1 0 70%" }}>
           <Container>
