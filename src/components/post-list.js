@@ -14,7 +14,7 @@ const PostListItem = ({ id, excerpt, frontmatter, fields }) => {
       {grouping => (
         <li
           sx={{
-            p: 4,
+            p: 6,
             borderBottomWidth: "thin",
             borderBottomStyle: "solid",
             borderBottomColor: "muted",

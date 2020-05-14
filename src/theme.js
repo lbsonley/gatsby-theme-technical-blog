@@ -94,7 +94,8 @@ export const theme = {
     header: {
       padding: 6,
       marginBottom: 4,
-      color: "text",
+      color: "background",
+      bg: "text"
     },
     footer: {
       padding: 6,
@@ -115,14 +116,19 @@ export const theme = {
       borderRadius: "pill",
       bg: "primary",
       color: "background",
-      py: 3,
-      px: 5,
+      transition: "background-color 0.2s ease",
+      py: 2,
+      px: 4,
       mr: 3,
       my: 3,
       "&:hover": {
         bg: "highlight",
       },
     },
+    title: {
+      color: "background",
+      textDecoration: "none",
+    }
   },
 
   /**
@@ -165,6 +171,7 @@ export const theme = {
     },
     a: {
       color: "accent",
+      transition: "color 0.2s ease",
       "&:hover": {
         color: "highlight",
       },
