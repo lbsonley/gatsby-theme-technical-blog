@@ -27,9 +27,7 @@ const Layout = ({ children }) => {
           </Styled.h1>
         </header>
         <main sx={{ flex: "1 0 70%" }}>
-          <Container>
-            {children}
-          </Container>  
+          <Container>{children}</Container>
         </main>
         <footer
           sx={{

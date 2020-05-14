@@ -95,7 +95,7 @@ export const theme = {
       padding: 6,
       marginBottom: 4,
       color: "background",
-      bg: "text"
+      bg: "text",
     },
     footer: {
       padding: 6,
@@ -128,7 +128,7 @@ export const theme = {
     title: {
       color: "background",
       textDecoration: "none",
-    }
+    },
   },
 
   /**

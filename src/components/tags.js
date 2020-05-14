@@ -9,10 +9,10 @@ const Tag = ({ name, title = false }) => {
       <ThemeLink
         variant="tag"
         as={Link}
-        to={title ? '/blog' : `/tags/${name}` }
+        to={title ? "/blog" : `/tags/${name}`}
         sx={{
           display: "flex",
-          alignItems: "center"
+          alignItems: "center",
         }}
       >
         {name}
@@ -24,13 +24,14 @@ const Tag = ({ name, title = false }) => {
 
 const Tags = ({ tags, title }) => {
   return (
-    <Flex as="ul"
+    <Flex
+      as="ul"
       sx={{
         alignItems: "center",
         listStyle: "none",
         m: 0,
         p: 0,
-        ml: () => `${title ? 2 : 0}`
+        ml: () => `${title ? 2 : 0}`,
       }}
     >
       <FaTags size={24} sx={{ mr: 4 }} />

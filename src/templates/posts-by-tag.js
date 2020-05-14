@@ -6,7 +6,7 @@ import SubTitle from "../components/subtitle";
 const PostsByTag = ({ data: { allMdx }, pageContext: { tag } }) => {
   return (
     <>
-      <SubTitle tag={tag}/>
+      <SubTitle tag={tag} />
       <PostList posts={allMdx.edges} />
     </>
   );

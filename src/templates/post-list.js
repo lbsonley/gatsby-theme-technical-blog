@@ -4,7 +4,7 @@ import PostList from "../components/post-list";
 import Grouping from "../contexts/grouping.js";
 
 const PostListTemplate = ({ data: { allMdx }, pageContext }) => (
-  <Grouping.Provider value={pageContext} >
+  <Grouping.Provider value={pageContext}>
     <PostList posts={allMdx.edges} />
   </Grouping.Provider>
 );

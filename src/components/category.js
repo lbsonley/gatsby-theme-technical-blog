@@ -13,7 +13,7 @@ const Category = ({ category, title }) => {
         flexWrap: "nowrap",
         alignItems: "center",
         mt: 2,
-        ml: () => `${title ? 2 : 0}`
+        ml: () => `${title ? 2 : 0}`,
       }}
     >
       <FaFolder size={24} sx={{ mr: 4 }} />
@@ -24,7 +24,7 @@ const Category = ({ category, title }) => {
           sx={{ display: "flex", alignItems: "center" }}
         >
           {capitalize(category)}
-          {title ? <FaTimes sx={{ marginLeft: 2 }} /> : null }
+          {title ? <FaTimes sx={{ marginLeft: 2 }} /> : null}
         </ThemeLink>
       </p>
     </Flex>

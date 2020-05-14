@@ -10,7 +10,7 @@ const Post = ({ id, body, frontmatter }) => {
 
   return (
     <Grouping.Consumer>
-      {grouping => (
+      {(grouping) => (
         <>
           <Styled.h2>{title}</Styled.h2>
           <UiDate timestamp={date} />

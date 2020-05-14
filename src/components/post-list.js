@@ -11,7 +11,7 @@ const PostListItem = ({ id, excerpt, frontmatter, fields }) => {
 
   return (
     <Grouping.Consumer>
-      {grouping => (
+      {(grouping) => (
         <li
           sx={{
             p: 6,

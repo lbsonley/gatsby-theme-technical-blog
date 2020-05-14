@@ -10,14 +10,10 @@ const SubTitle = ({ tag = false, category = false }) => {
       <Styled.h2 sx={{ fontSize: 3 }}>
         You are viewing posts {tag ? "tagged" : "categorized"}:
       </Styled.h2>
-      {tag
-        ? <Tags tags={[tag]} title={true} />
-        : null}
-      {category
-        ? <Category category={category} title={true} />
-        : null} 
+      {tag ? <Tags tags={[tag]} title={true} /> : null}
+      {category ? <Category category={category} title={true} /> : null}
     </Box>
-  )
+  );
 };
 
 export default SubTitle;
