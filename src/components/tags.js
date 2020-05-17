@@ -2,23 +2,28 @@
 import { Link } from "gatsby";
 import { jsx, Link as ThemeLink, Flex } from "theme-ui";
 import { FaTag, FaTags, FaTimes } from "react-icons/fa";
+import BasePath from "../contexts/base-path";
 
 const Tag = ({ name, title = false }) => {
   return (
-    <li sx={{ display: "inline-block" }}>
-      <ThemeLink
-        variant="tag"
-        as={Link}
-        to={title ? "/blog" : `/tags/${name}`}
-        sx={{
-          display: "flex",
-          alignItems: "center",
-        }}
-      >
-        {name}
-        {title ? <FaTimes sx={{ ml: 2 }} /> : null}
-      </ThemeLink>
-    </li>
+    <BasePath.Consumer>
+      {(basePath) => (
+        <li sx={{ display: "inline-block" }}>
+          <ThemeLink
+            variant="tag"
+            as={Link}
+            to={title ? basePath : `/tags/${name}`}
+            sx={{
+              display: "flex",
+              alignItems: "center",
+            }}
+          >
+            {name}
+            {title ? <FaTimes sx={{ ml: 2 }} /> : null}
+          </ThemeLink>
+        </li>
+      )}
+    </BasePath.Consumer>
   );
 };
 

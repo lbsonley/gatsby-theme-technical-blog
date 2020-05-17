@@ -1,7 +1,7 @@
 import React from "react";
 import { graphql } from "gatsby";
 import PostList from "../components/post-list";
-import Grouping from "../contexts/grouping.js";
+import Grouping from "../contexts/grouping";
 
 const PostListTemplate = ({ data: { allMdx }, pageContext }) => (
   <Grouping.Provider value={pageContext}>

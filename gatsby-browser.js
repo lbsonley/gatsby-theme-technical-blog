@@ -1,8 +1,12 @@
-const React = require("react")
-const Layout = require("./src/components/layout").default
+const React = require("react");
+const Layout = require("./src/components/layout").default;
 
-exports.wrapPageElement = ({ element, props }) => {
+exports.wrapPageElement = ({ element }, { basePath }) => {
   // props provide same data to Layout as Page element will get
   // including location, data, etc - you don't need to pass it
-  return <Layout>{element}</Layout>
+  return (
+    <Layout basePath={basePath}>
+      {element}
+    </Layout>
+  )
 };
