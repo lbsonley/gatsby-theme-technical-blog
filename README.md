@@ -1,5 +1,7 @@
 # Gatsby Theme Tech(nical) Blog
 
+[![latest version on npm](https://img.shields.io/npm/v/@lbsonley/gatsby-theme-technical-blog)](https://www.npmjs.com/package/@lbsonley/gatsby-theme-technical-blog) [![npm downloads a month](https://img.shields.io/npm/dm/@lbsonley/gatsby-theme-technical-blog)](https://www.npmjs.com/package/@lbsonley/gatsby-theme-technical-blog) [![package license](https://img.shields.io/npm/l/@lbsonley/gatsby-theme-technical-blog)](license)
+
 A feature-rich Gatsby Blog Theme for technical bloggers. Useful for developers, scientists, teachers and anyone who wants to publish technical documents. 
 
 **Features**
@@ -56,7 +58,7 @@ There are several options for configuring `gatsby-theme-technical-blog`, when yo
 module.exports = {
   plugins: [
     {
-      resolve: "gatsby-theme-tech-blog-mdx",
+      resolve: "gatsby-theme-technical-blog",
       options: {
         contentPath: "docs", // look for mdx files in docs directory
         basePath: "/docs", // publish pages at /docs/{page}
