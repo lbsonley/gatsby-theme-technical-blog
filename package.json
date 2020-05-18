@@ -12,11 +12,12 @@
   },
   "keywords": [
     "gatsby",
-    "theme-ui",
-    "mdx-js",
-    "prismjs",
+    "gatsby-plugin",
+    "gatsby-theme",
     "KaTeX",
-    "blog theme"
+    "prismjs",
+    "mdx-js",
+    "theme-ui"
   ],
   "scripts": {
     "build": "gatsby build",
