@@ -1,7 +1,8 @@
 {
-  "name": "gatsby-theme-technical-blog",
+  "name": "@lbsonley/gatsby-theme-technical-blog",
   "version": "0.2.0",
   "description": "Technical Blog Template for Gatsby.js",
+  "repository": "lbsonley/gatsby-theme-technical-blog",
   "main": "index.js",
   "license": "MIT",
   "author": {

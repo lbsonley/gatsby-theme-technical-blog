@@ -5,8 +5,8 @@ A feature-rich Gatsby Blog Theme for technical bloggers. Useful for developers, 
 **Features**
 
   - Categorization and Tagging
-  _ Frontmatter
   - SEO Meta Data
+  - Write posts in MDX
   - Configurable theming (`theme-ui`)
   - Code blocks (`prismjs`)
   - KaTeX Math (`katex`)
