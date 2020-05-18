@@ -5,7 +5,7 @@ import UiDate from "./ui-date";
 import Tags from "./tags";
 import Grouping from "../contexts/grouping";
 
-const Post = ({ id, body, frontmatter }) => {
+const Post = ({ body, frontmatter }) => {
   const { title, tags, date } = frontmatter;
 
   return (

@@ -67,9 +67,11 @@ exports.createPages = async ({ graphql, actions, reporter }, options) => {
   const useCategories = options.categories !== undefined ?
     options.categories :
     true;
+  const categorySeoTitle = options.categorySeoTitle || "Posts categorized:";
   const useTags = options.tags !== undefined ?
     options.tags :
     true;
+  const tagSeoTitle = options.tagSeoTitle || "Posts tagged:";
 
   /**
    * Create Post Listing Page
@@ -150,7 +152,10 @@ exports.createPages = async ({ graphql, actions, reporter }, options) => {
       actions.createPage({
         path: `/category/${fieldValue}`,
         component: require.resolve('./src/templates/posts-by-category.js'),
-        context: { category: fieldValue }
+        context: {
+          category: fieldValue,
+          seoTitle: categorySeoTitle,
+        }
       })
     });
   }
@@ -184,7 +189,10 @@ exports.createPages = async ({ graphql, actions, reporter }, options) => {
       actions.createPage({
         path: `/tags/${fieldValue}`,
         component: require.resolve('./src/templates/posts-by-tag.js'),
-        context: { tag: fieldValue }
+        context: {
+          tag: fieldValue,
+          seoTitle: tagSeoTitle
+        }
       })
     });
   }

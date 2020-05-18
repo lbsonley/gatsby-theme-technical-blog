@@ -2,9 +2,11 @@ import React from "react";
 import { graphql } from "gatsby";
 import PostList from "../components/post-list";
 import Grouping from "../contexts/grouping";
+import SEO from "../components/seo";
 
 const PostListTemplate = ({ data: { allMdx }, pageContext }) => (
   <Grouping.Provider value={pageContext}>
+    <SEO />
     <PostList posts={allMdx.edges} />
   </Grouping.Provider>
 );

@@ -2,8 +2,19 @@ module.exports = ({
   contentPath = "posts",
   basePath = "/blog",
   categories = true,
-  tags = true
+  categorySeoTitle = "Posts categorized:",
+  tags = true,
+  tagSeoTitle = "Posts tagged:"
 }) => ({
+  siteMetadata: {
+    title: "Gatsby Theme Technical Blog",
+    titleTemplate: "%s · Write Technically",
+    description:
+      "Gatsby theme for blogs with technical content.",
+    url: "https://www.bensonley.com", // No trailing slash allowed!
+    image: "/ironman.png", // Path to your image you placed in the 'static' folder
+    twitterUsername: false
+  },
   plugins: [
     /**
      * Add support for theme-ui

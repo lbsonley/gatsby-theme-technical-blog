@@ -2,10 +2,15 @@ import React from "react";
 import { graphql } from "gatsby";
 import PostList from "../components/post-list";
 import SubTitle from "../components/subtitle";
+import SEO from "../components/seo";
 
-const PostsByTag = ({ data: { allMdx }, pageContext: { tag } }) => {
+const PostsByTag = ({
+  data: { allMdx },
+  pageContext: { tag, seoTitle }
+}) => {
   return (
     <>
+      <SEO title={`${seoTitle} ${tag}`} />
       <SubTitle tag={tag} />
       <PostList posts={allMdx.edges} />
     </>

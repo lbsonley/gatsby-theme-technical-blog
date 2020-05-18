@@ -4,10 +4,15 @@ import { graphql } from "gatsby";
 import { jsx, Styled } from "theme-ui";
 import PostList from "../components/post-list";
 import SubTitle from "../components/subtitle";
+import SEO from "../components/seo";
 
-const PostsByCategory = ({ data: { allMdx }, pageContext: { category } }) => {
+const PostsByCategory = ({
+  data: { allMdx },
+  pageContext: { category, seoTitle }
+}) => {
   return (
     <>
+      <SEO title={`${seoTitle} ${category}`} />
       <SubTitle category={category} />
       <PostList posts={allMdx.edges} />
     </>

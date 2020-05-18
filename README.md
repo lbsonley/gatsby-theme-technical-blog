@@ -47,6 +47,8 @@ There are several options for configuring `gatsby-theme-technical-blog`, when yo
 | basePath | string | "/blog" | The path at which pages will be created. |
 | categories | boolean | true | Whether or not to create an index page for categories |
 | tags | boolean | true | Whether or not to create an index page for tags |
+| categorySeoTitle | string | "Posts categorized:" | Used in SEO title on PostsByCategory page. Dynamically combined with selected category to produce a title "Post categorized: {category}". |
+| tagSeoTitle | string | "Posts tagged:" | Used in SEO title on PostsbyTag page. Dynamically combined with selected category to produce a title "Post tagged: {tag}". |
 
 ```js
 /* gatsby-config.js */
@@ -59,6 +61,8 @@ module.exports = {
         contentPath: "docs", // look for mdx files in docs directory
         basePath: "/docs", // publish pages at /docs/{page}
         categories: false // disable categories
+        categorySeoTitle: "Docs categorized:"
+        categories: "Docs tagged:"
       }
     }
   ]
