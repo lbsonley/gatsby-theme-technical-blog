@@ -80,6 +80,7 @@ exports.createPages = async ({ graphql, actions, reporter }, options) => {
     path: basePath,
     component: require.resolve(`./src/templates/post-list.js`),
     context: {
+      basePath,
       categories: useCategories,
       tags: useTags
     }
@@ -116,6 +117,7 @@ exports.createPages = async ({ graphql, actions, reporter }, options) => {
       path: node.fields.slug,
       component: require.resolve(`./src/templates/post.js`),
       context: {
+        basePath,
         id: node.id,
         categories: useCategories,
         tags: useTags
@@ -153,6 +155,7 @@ exports.createPages = async ({ graphql, actions, reporter }, options) => {
         path: `/category/${fieldValue}`,
         component: require.resolve('./src/templates/posts-by-category.js'),
         context: {
+          basePath,
           category: fieldValue,
           seoTitle: categorySeoTitle,
         }
@@ -190,6 +193,7 @@ exports.createPages = async ({ graphql, actions, reporter }, options) => {
         path: `/tags/${fieldValue}`,
         component: require.resolve('./src/templates/posts-by-tag.js'),
         context: {
+          basePath,
           tag: fieldValue,
           seoTitle: tagSeoTitle
         }

@@ -5,17 +5,18 @@ import { jsx, Styled } from "theme-ui";
 import PostList from "../components/post-list";
 import SubTitle from "../components/subtitle";
 import SEO from "../components/seo";
+import Layout from "../components/layout";
 
 const PostsByCategory = ({
   data: { allMdx },
-  pageContext: { category, seoTitle }
+  pageContext: { basePath, category, seoTitle }
 }) => {
   return (
-    <>
+    <Layout basePath={basePath}>
       <SEO title={`${seoTitle} ${category}`} />
       <SubTitle category={category} />
       <PostList posts={allMdx.edges} />
-    </>
+    </Layout>
   );
 };
 

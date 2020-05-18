@@ -3,17 +3,18 @@ import { graphql } from "gatsby";
 import PostList from "../components/post-list";
 import SubTitle from "../components/subtitle";
 import SEO from "../components/seo";
+import Layout from "../components/layout";
 
 const PostsByTag = ({
   data: { allMdx },
-  pageContext: { tag, seoTitle }
+  pageContext: { basePath, tag, seoTitle }
 }) => {
   return (
-    <>
+    <Layout basePath={basePath}>
       <SEO title={`${seoTitle} ${tag}`} />
       <SubTitle tag={tag} />
       <PostList posts={allMdx.edges} />
-    </>
+    </Layout>
   );
 };
 
