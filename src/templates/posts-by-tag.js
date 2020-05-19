@@ -7,10 +7,10 @@ import Layout from "../components/layout";
 
 const PostsByTag = ({
   data: { allMdx },
-  pageContext: { basePath, tag, seoTitle }
+  pageContext: { tag, seoTitle }
 }) => {
   return (
-    <Layout basePath={basePath}>
+    <Layout>
       <SEO title={`${seoTitle} ${tag}`} />
       <SubTitle tag={tag} />
       <PostList posts={allMdx.edges} />

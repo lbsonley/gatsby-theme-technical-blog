@@ -7,9 +7,9 @@ import Layout from "../components/layout";
 
 const PostTemplate = ({
   data: { mdx },
-  pageContext: { basePath, categories, tags }
+  pageContext: { categories, tags }
 }) => (
-  <Layout basePath={basePath}>
+  <Layout>
     <Grouping.Provider value={{ categories, tags }}>
       <SEO
         title={mdx.frontmatter.title}

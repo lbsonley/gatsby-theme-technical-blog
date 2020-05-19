@@ -7,9 +7,9 @@ import SEO from "../components/seo";
 
 const PostListTemplate = ({
   data: { allMdx },
-  pageContext: { basePath, categories, tags}
+  pageContext: { categories, tags}
 }) => (
-  <Layout basePath={basePath}>
+  <Layout>
     <Grouping.Provider value={{ categories, tags }}>
       <SEO />
       <PostList posts={allMdx.edges} />

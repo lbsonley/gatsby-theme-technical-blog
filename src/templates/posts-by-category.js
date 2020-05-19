@@ -9,10 +9,10 @@ import Layout from "../components/layout";
 
 const PostsByCategory = ({
   data: { allMdx },
-  pageContext: { basePath, category, seoTitle }
+  pageContext: { category, seoTitle }
 }) => {
   return (
-    <Layout basePath={basePath}>
+    <Layout>
       <SEO title={`${seoTitle} ${category}`} />
       <SubTitle category={category} />
       <PostList posts={allMdx.edges} />
