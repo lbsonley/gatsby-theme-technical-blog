@@ -62,9 +62,10 @@ module.exports = {
       options: {
         contentPath: "docs", // look for mdx files in docs directory
         basePath: "/docs", // publish pages at /docs/{page}
-        categories: false // disable categories
-        categorySeoTitle: "Docs categorized:"
-        categories: "Docs tagged:"
+        categories: true,
+        categorySeoTitle: "Docs categorized:",
+        tags: true,
+        tagSeoTitle: "Docs tagged:"
       }
     }
   ]
