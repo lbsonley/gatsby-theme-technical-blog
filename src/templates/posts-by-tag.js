@@ -4,10 +4,7 @@ import PostList from "../components/post-list";
 import SubTitle from "../components/subtitle";
 import SEO from "../components/seo";
 
-const PostsByTag = ({
-  data: { allMdx },
-  pageContext: { tag, seoTitle }
-}) => {
+const PostsByTag = ({ data: { allMdx }, pageContext: { tag, seoTitle } }) => {
   return (
     <>
       <SEO title={`${seoTitle} ${tag}`} />

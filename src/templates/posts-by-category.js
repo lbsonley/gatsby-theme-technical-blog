@@ -8,7 +8,7 @@ import SEO from "../components/seo";
 
 const PostsByCategory = ({
   data: { allMdx },
-  pageContext: { category, seoTitle }
+  pageContext: { category, seoTitle },
 }) => {
   return (
     <Fragment>

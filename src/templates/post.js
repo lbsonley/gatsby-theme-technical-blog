@@ -4,16 +4,9 @@ import Post from "../components/post";
 import Grouping from "../contexts/grouping";
 import SEO from "../components/seo";
 
-const PostTemplate = ({
-  data: { mdx },
-  pageContext: { categories, tags }
-}) => (
+const PostTemplate = ({ data: { mdx }, pageContext: { categories, tags } }) => (
   <Grouping.Provider value={{ categories, tags }}>
-    <SEO
-      title={mdx.frontmatter.title}
-      description={mdx.excerpt}
-      article
-    />
+    <SEO title={mdx.frontmatter.title} description={mdx.excerpt} article />
     <Post {...mdx} />
   </Grouping.Provider>
 );

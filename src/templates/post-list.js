@@ -6,7 +6,7 @@ import SEO from "../components/seo";
 
 const PostListTemplate = ({
   data: { allMdx },
-  pageContext: { categories, tags}
+  pageContext: { categories, tags },
 }) => (
   <Grouping.Provider value={{ categories, tags }}>
     <SEO />

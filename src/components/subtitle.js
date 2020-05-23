@@ -1,5 +1,4 @@
 /** @jsx jsx */
-import React from "react";
 import { jsx, Styled, Box } from "theme-ui";
 import Tags from "./tags";
 import Category from "./category";

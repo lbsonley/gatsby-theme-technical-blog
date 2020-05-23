@@ -7,7 +7,7 @@ const components = {
   code: CodeBlock,
 };
 
-exports.wrapRootElement = ({ element }, { basePath }) => {
+exports.wrapRootElement = ({ element }, { basePath = "/blog" }) => {
   return (
     <BasePath.Provider value={basePath}>
       <MDXProvider components={components}>

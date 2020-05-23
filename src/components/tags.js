@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import { Link } from "gatsby";
 import { jsx, Link as ThemeLink, Flex } from "theme-ui";
-import { FaTag, FaTags, FaTimes } from "react-icons/fa";
+import { FaTags, FaTimes } from "react-icons/fa";
 import BasePath from "../contexts/base-path";
 
 const Tag = ({ name, title = false }) => {
