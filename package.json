@@ -1,10 +1,11 @@
 {
   "name": "@lbsonley/gatsby-theme-technical-blog",
-  "version": "0.4.1",
+  "version": "0.5.0",
   "description": "Technical Blog Template for Gatsby.js",
   "repository": "lbsonley/gatsby-theme-technical-blog",
   "main": "index.js",
   "license": "MIT",
+  "bugs": "https://github.com/lbsonley/gatsby-theme-technical-blog/issues",
   "author": {
     "name": "Ben Sonley",
     "email": "lbsonley@gmail.com",

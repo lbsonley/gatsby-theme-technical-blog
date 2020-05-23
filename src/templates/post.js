@@ -3,22 +3,19 @@ import { graphql } from "gatsby";
 import Post from "../components/post";
 import Grouping from "../contexts/grouping";
 import SEO from "../components/seo";
-import Layout from "../components/layout";
 
 const PostTemplate = ({
   data: { mdx },
   pageContext: { categories, tags }
 }) => (
-  <Layout>
-    <Grouping.Provider value={{ categories, tags }}>
-      <SEO
-        title={mdx.frontmatter.title}
-        description={mdx.excerpt}
-        article
-      />
-      <Post {...mdx} />
-    </Grouping.Provider>
-  </Layout>
+  <Grouping.Provider value={{ categories, tags }}>
+    <SEO
+      title={mdx.frontmatter.title}
+      description={mdx.excerpt}
+      article
+    />
+    <Post {...mdx} />
+  </Grouping.Provider>
 );
 
 export const query = graphql`

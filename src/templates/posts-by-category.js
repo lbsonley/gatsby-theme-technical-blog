@@ -1,22 +1,21 @@
 /** @jsx jsx */
-import React from "react";
+import { Fragment } from "react";
 import { graphql } from "gatsby";
-import { jsx, Styled } from "theme-ui";
+import { jsx } from "theme-ui";
 import PostList from "../components/post-list";
 import SubTitle from "../components/subtitle";
 import SEO from "../components/seo";
-import Layout from "../components/layout";
 
 const PostsByCategory = ({
   data: { allMdx },
   pageContext: { category, seoTitle }
 }) => {
   return (
-    <Layout>
+    <Fragment>
       <SEO title={`${seoTitle} ${category}`} />
       <SubTitle category={category} />
       <PostList posts={allMdx.edges} />
-    </Layout>
+    </Fragment>
   );
 };
 

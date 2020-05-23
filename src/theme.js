@@ -90,35 +90,14 @@ export const theme = {
   zIndices: [0, 1, 10, 100, 1000],
 
   /**
-   * Layout
-   */
-  layout: {
-    header: {
-      padding: 6,
-      marginBottom: 7,
-      color: "background",
-      bg: "primary",
-      boxShadow: "medium",
-    },
-    footer: {
-      padding: 6,
-      marginTop: 7,
-    },
-    container: {
-      maxWidth: "maxWidth",
-      width: "width",
-    },
-  },
-
-  /**
    * theme-ui <Link> component
    */
   links: {
     tag: {
       textDecoration: "none",
       borderRadius: "pill",
-      bg: "accent",
-      color: "background",
+      bg: "primary",
+      color: "light",
       transition: "background-color 0.2s ease",
       py: 2,
       px: 4,
@@ -127,10 +106,6 @@ export const theme = {
       "&:hover": {
         bg: "highlight",
       },
-    },
-    title: {
-      color: "light",
-      textDecoration: "none",
     },
   },
 
