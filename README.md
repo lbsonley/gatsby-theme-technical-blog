@@ -236,7 +236,7 @@ If you want to customize your code block component (i.e. change the color theme)
 yarn add prism-react-renderer
 ```
 
-Then you can shadow the [code block component from `gatsby-theme-technical-blog`](src/components/code-block) by creating a file at `src/@lbsonley/gatsby-theme-technical-blog/code-block.js` with the following content. Just exchange the theme import below with the [theme](https://github.com/FormidableLabs/prism-react-renderer/tree/master/src/themes) of your choice.
+Then you can shadow the [code block component from `gatsby-theme-technical-blog`](src/components/code-block.js) by creating a file at `src/@lbsonley/gatsby-theme-technical-blog/code-block.js` with the following content. Just exchange the theme import below with the [theme](https://github.com/FormidableLabs/prism-react-renderer/tree/master/src/themes) of your choice.
 
 ```jsx
 /** @jsx jsx */
