@@ -162,7 +162,7 @@ const Layout = ({ children }) => {
         }}
       >
         <Styled.p sx={{ m: 0 }}>Site Footer</Styled.p>
-      </footer>
+      </Flex>
     </Flex>
   );
 };
@@ -192,7 +192,7 @@ exports.wrapPageElement = ({ element }) => {
 ```js
 import { theme as baseTheme } from "@lbsonley/gatsby-theme-technical-blog/src/theme";
 
-export const theme = {
+export default {
   ...baseTheme,
   colors: {
     ...baseTheme.colors,

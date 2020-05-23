@@ -1,8 +1,8 @@
 /** @jsx jsx */
 import { jsx, useColorMode } from "theme-ui";
 import {
-  WiMoonAltWaningGibbous3 as DarkModeIcon,
-  WiMoonAltWaningGibbous4 as LightModeIcon,
+  WiMoonAltWaxingGibbous3 as DarkModeIcon,
+  WiMoonAltWaningCrescent4 as LightModeIcon,
 } from "react-icons/wi";
 
 const ColorModeToggle = () => {
@@ -16,11 +16,13 @@ const ColorModeToggle = () => {
       }}
       sx={{
         border: "none",
-        p: 3,
-        color: "background",
-        bg: "text",
+        color: "light",
+        bg: "primary",
         borderRadius: "sm",
         cursor: "pointer",
+        "&:hover": {
+          color: "highlight"
+        }
       }}
     >
       {mode === "dark" ? (

@@ -1,6 +1,6 @@
 {
   "name": "@lbsonley/gatsby-theme-technical-blog",
-  "version": "0.5.1",
+  "version": "0.5.2",
   "description": "Technical Blog Template for Gatsby.js",
   "repository": "lbsonley/gatsby-theme-technical-blog",
   "main": "index.js",

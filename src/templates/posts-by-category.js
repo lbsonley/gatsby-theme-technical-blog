@@ -1,7 +1,6 @@
 /** @jsx jsx */
-import { Fragment } from "react";
 import { graphql } from "gatsby";
-import { jsx } from "theme-ui";
+import { jsx, Container} from "theme-ui";
 import PostList from "../components/post-list";
 import SubTitle from "../components/subtitle";
 import SEO from "../components/seo";
@@ -11,11 +10,11 @@ const PostsByCategory = ({
   pageContext: { category, seoTitle },
 }) => {
   return (
-    <Fragment>
+    <Container>
       <SEO title={`${seoTitle} ${category}`} />
       <SubTitle category={category} />
       <PostList posts={allMdx.edges} />
-    </Fragment>
+    </Container>
   );
 };
 

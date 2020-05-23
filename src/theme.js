@@ -8,24 +8,29 @@ export const theme = {
    * Colors
    */
   colors: {
+    dark: "#263238",
     light: "#FAFAFA",
     text: "#263238",
+    link: "#1E272C",
+    hover: "#80CBC4",
     background: "#FAFAFA",
+    buttonBorder: "#1E272C",
+    buttonBorderHover: "#80CBC4",
+
     primary: "#1E272C",
     secondary: "#546E7A",
     accent: "#73B6B0",
     highlight: "#80CBC4",
     muted: "#546E7A",
+
     modes: {
       dark: {
-        light: "#FAFAFA",
         text: "#FAFAFA",
+        link: "#73B6B0",
+        hover: "#80CBC4",
         background: "#263238",
-        primary: "#1E272C",
-        secondary: "#546E7A",
-        accent: "#73B6B0",
-        highlight: "#80CBC4",
-        muted: "#546E7A",
+        buttonBorder: "transparent",
+        buttonBorderHover: "transparent",
       },
     },
   },
@@ -57,8 +62,8 @@ export const theme = {
   borderWidths: {
     none: "0px",
     thin: "1px",
-    medium: "3px",
-    thick: "5px",
+    medium: "2px",
+    thick: "4px",
   },
   radii: {
     default: "0px",
@@ -80,7 +85,8 @@ export const theme = {
    * Sizes and Spacings
    */
   sizes: {
-    maxWidth: "600px",
+    maxWidthNarrow: "640px",
+    maxWidthWide: "1024px",
     width: "90vw",
     minHeight: "100vh",
   },
@@ -96,16 +102,61 @@ export const theme = {
     tag: {
       textDecoration: "none",
       borderRadius: "pill",
-      bg: "primary",
-      color: "light",
-      transition: "background-color 0.2s ease",
+      bg: "link",
+      color: "background",
+      transition: "background-color 0.2s ease, color 0.2s ease",
       py: 2,
       px: 4,
       mr: 3,
       my: 3,
       "&:hover": {
-        bg: "highlight",
+        bg: "hover",
+        color: "text"
       },
+    },
+  },
+
+  /**
+   * theme-ui <Button> component
+   */
+  buttons: {
+    primary: {
+      bg: "primary",
+      color: "light",
+      transition: "background-color 0.2s ease",
+      borderWidth: "medium",
+      borderColor: "transparent",
+      borderStyle: "solid",
+      borderRadius: "sm",
+      p: 5,
+      cursor: "pointer",
+      "&:hover": {
+        bg: "highlight"
+      }
+    },
+    secondary: {
+      bg: "light",
+      color: "primary",
+      transition: "border-color 0.2s ease, color: 0.2s ease",
+      borderWidth: "medium",
+      borderColor: "buttonBorder",
+      borderStyle: "solid",
+      borderRadius: "sm",
+      p: 5,
+      cursor: "pointer",
+      "&:hover": {
+        borderColor: "buttonBorderHover",
+        color: "highlight"
+      }
+    },
+    disabled: {
+      bg: "muted",
+      color: "dark",
+      borderWidth: "medium",
+      borderColor: "transparent",
+      borderStyle: "solid",
+      borderRadius: "sm",
+      p: 5,
     },
   },
 
@@ -148,11 +199,21 @@ export const theme = {
       my: 5,
     },
     a: {
-      color: "accent",
+      color: "link",
       transition: "color 0.2s ease",
       "&:hover": {
-        color: "highlight",
+        color: "hover",
       },
     },
   },
+
+  /**
+   * Layout components
+   */
+  layout: {
+    container: {
+      width: "width",
+      maxWidth: "maxWidthNarrow"
+    },
+  }
 };
